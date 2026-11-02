@@ -1,1 +1,104 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lost in the Desert</title>
+
+    <style>
+        body {
+            margin: 0;
+            background: #100e0c;
+            color: white;
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+        }
+
+        .page {
+            height: 100vh;
+            background-image:
+                linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.75)),
+                url("desert.jpg");
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 55px;
+            letter-spacing: 5px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            color: #ccc;
+            font-size: 18px;
+        }
+
+        .car {
+            width: 350px;
+            max-width: 80vw;
+            margin: 30px;
+            transition: transform 3s ease-in;
+        }
+
+        button {
+            background: #b88043;
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            font-size: 18px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background: #d69b59;
+        }
+
+        .driving {
+            transform: translateX(120vw);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="page">
+        <h1>LOST IN THE DESERT</h1>
+        <p>One journey. One wrong turn.</p>
+
+        <img src="car.png" class="car" id="car" alt="Car">
+
+        <button id="startButton" onclick="startJourney()">
+            Start Journey
+        </button>
+    </div>
+
+    <audio id="engineSound" src="engine.mp3" preload="auto"></audio>
+
+    <script>
+        function startJourney() {
+            let engine = document.getElementById("engineSound");
+            let car = document.getElementById("car");
+            let button = document.getElementById("startButton");
+
+            button.style.display = "none";
+
+            engine.currentTime = 0;
+            engine.play();
+
+            setTimeout(function() {
+                car.classList.add("driving");
+            }, 1500);
+        }
+    </script>
+
+</body>
+</html>
+
