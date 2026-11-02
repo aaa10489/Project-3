@@ -99,6 +99,83 @@
         }
     </script>
 
+    
+<div class="radio">
+  <h3>FM RADIO</h3>
+  <h1 id="frequency">95.0 FM</h1>
+
+  <button onclick="changeStation(-1)">◀</button>
+  <button onclick="toggleRadio()">POWER</button>
+  <button onclick="changeStation(1)">▶</button>
+
+  <p>Volume</p>
+  <input type="range" id="volume" min="0" max="100" value="50">
+
+  <p id="radioStatus">RADIO OFF</p>
+</div>
+
+<style>
+  .radio {
+    width: 300px;
+    background: #161b22;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    border-radius: 12px;
+    font-family: Arial, sans-serif;
+    margin: 20px auto;
+  }
+
+  .radio h1 {
+    background: #071510;
+    color: #9affbb;
+    padding: 20px;
+    border-radius: 8px;
+  }
+
+  .radio button {
+    background: #343a46;
+    color: white;
+    border: none;
+    padding: 12px;
+    margin: 4px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+
+  .radio input {
+    width: 80%;
+  }
+</style>
+
+<script>
+  let frequency = 95.0;
+  let radioOn = false;
+
+  function changeStation(direction) {
+    if (!radioOn) return;
+
+    frequency += direction * 0.2;
+
+    if (frequency > 108) frequency = 87.5;
+    if (frequency < 87.5) frequency = 108;
+
+    document.getElementById("frequency").innerText =
+      frequency.toFixed(1) + " FM";
+
+    document.getElementById("radioStatus").innerText =
+      "SEARCHING FOR SIGNAL...";
+  }
+
+  function toggleRadio() {
+    radioOn = !radioOn;
+
+    document.getElementById("radioStatus").innerText =
+      radioOn ? "SIGNAL CONNECTED" : "RADIO OFF";
+  }
+</script>
+
+
 </body>
 </html>
 
