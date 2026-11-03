@@ -59,6 +59,15 @@ photos.forEach(function(photo) {
       p.classList.remove('enlarged');
     });
 
+     // Stop all Page 4 sounds before playing another
+    ['radio-sound', 'stuck-sound', 'deer-sound', 'exterior-engine-sound'].forEach(function(id) {
+      const sound = document.getElementById(id);
+      if (sound) {
+        sound.pause();
+        sound.currentTime = 0;
+      }
+    }); 
+    
     // Enlarge the selected photo
     photo.classList.add('enlarged');
 
