@@ -62,13 +62,21 @@ photos.forEach(function(photo) {
     // Enlarge the selected photo
     photo.classList.add('enlarged');
 
-if (photo.alt === 'Deer') {
-  const deerSound = document.getElementById('deer-sound');
-  deerSound.currentTime = 0;
-  deerSound.play();
-}
-  });
-});
+    //deer sound
+    if (photo.alt === 'Deer') {
+      const deerSound = document.getElementById('deer-sound');
+      deerSound.currentTime = 0;
+      deerSound.play();
+    }
+    //car stuck sound
+    if (photo.alt === 'Car stuck in sand') {
+    const stuckSound = document.getElementById('stuck-sound');
+    stuckSound.currentTime = 0;
+    stuckSound.play();
+  }
+
+      });
+    });
 
 // Click anywhere else to close the enlarged photo
 document.addEventListener('click', function() {
