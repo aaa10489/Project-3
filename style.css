@@ -349,44 +349,42 @@ h1 {
 
 /* Steering wheel horn */
 #horn-area {
-  left: 12%;
-  top: 51%;
-  width: 8%;
-  height: 13%;
-  border-radius: 50%;
+    left: 21%;
+  top: 90%;
+  width: 5.5%;
+  height: 9%;
 }
 
 /* Green engine button */
 #engine-area {
-  left: 46%;
-  top: 68%;
-  width: 7%;
-  height: 12%;
-  border-radius: 50%;
+  left: 50%;
+  top: 97%;
+  width: 6%;
+  height: 10%;
 }
 
 /* Radio record */
 #record-area {
-  left: 55.7%;
-  top: 47.7%;
-  width: 2.7%;
-  height: 5.5%;
+  left: 57.3%;
+  top: 83.8%;
+  width: 2.5%;
+  height: 5%;
 }
 
 /* Radio play */
 #play-area {
-  left: 59%;
-  top: 47.7%;
-  width: 2.7%;
-  height: 5.5%;
+  left: 60%;
+  top: 83.8%;
+  width: 2.5%;
+  height: 5%;
 }
 
 /* Radio pause */
 #pause-area {
-  left: 62.3%;
-  top: 47.7%;
-  width: 2.7%;
-  height: 5.5%;
+  left: 62.7%;
+  top: 83.8%;
+  width: 2.5%;
+  height: 5%;
 }
 
 /* Subtle hover effects */
