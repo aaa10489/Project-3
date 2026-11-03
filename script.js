@@ -104,67 +104,115 @@ const stuckSound = document.getElementById('stuck-sound');
 });
 
 
-// PAGE 3 INTERACTIVE CAR
 
-const engineBtn = document.getElementById('engine-btn');
-const radioBtn = document.getElementById('radio-btn');
-const honkBtn = document.getElementById('honk-btn');
+// PAGE 3 - INTERACTIVE DASHBOARD
 
+const hornArea = document.getElementById('horn-area');
+const engineArea = document.getElementById('engine-area');
+const recordArea = document.getElementById('record-area');
+const playArea = document.getElementById('play-area');
+const pauseArea = document.getElementById('pause-area');
+
+const hornSound = document.getElementById('honk-sound');
 const engineSound = document.getElementById('engine-sound');
-const radioSound = document.getElementById('radio-sound');
-const honkSound = document.getElementById('honk-sound');
 
-const carMessage = document.getElementById('car-message');
-
-// START ENGINE
-engineBtn.addEventListener('click', function() {
-  playSound();
-  engineSound.currentTime = 0;
-  engineSound.play();
-  carMessage.textContent = 'Engine started...';
+// HORN - click steering wheel
+hornArea.addEventListener('click', function() {
+  hornSound.currentTime = 0;
+  hornSound.play().catch(function() {});
 });
 
-// PLAY OR STOP RADIO
-radioBtn.addEventListener('click', function() {
-  playSound();
+// ENGINE - click green button
+engineArea.addEventListener('click', function() {
+  engineSound.currentTime = 0;
+  engineSound.play().catch(function() {});
+});
 
-  if (radioSound.paused) {
-    radioSound.play();
-    radioBtn.textContent = 'STOP RADIO';
-    radioBtn.classList.add('playing');
-    carMessage.textContent = 'Radio connected...';
-  } else {
-    radioSound.pause();
-    radioSound.currentTime = 0;
-    radioBtn.textContent = 'PLAY RADIO';
-    radioBtn.classList.remove('playing');
-    carMessage.textContent = 'Radio disconnected...';
+// RADIO - record, play and pause
+let recorder;
+let recordedChunks = [];
+let recordedAudio = new Audio();
+let microphoneStream = null;
+
+// Record button
+recordArea.addEventListener('click', async function() {
+
+  // Click again to stop recording
+  if (recorder && recorder.state === 'recording') {
+    recorder.stop();
+    return;
+  }
+
+  if (!navigator.mediaDevices || !window.MediaRecorder) {
+    alert('Microphone recording requires localhost or HTTPS.');
+    return;
+  }
+
+  try {
+    microphoneStream =
+      await navigator.mediaDevices.getUserMedia({ audio: true });
+
+    recordedChunks = [];
+    recorder = new MediaRecorder(microphoneStream);
+
+    recorder.ondataavailable = function(event) {
+      if (event.data.size > 0) {
+        recordedChunks.push(event.data);
+      }
+    };
+
+    recorder.onstop = function() {
+      const audioBlob = new Blob(recordedChunks, {
+        type: recorder.mimeType
+      });
+
+      if (recordedAudio.src.startsWith('blob:')) {
+        URL.revokeObjectURL(recordedAudio.src);
+      }
+
+      recordedAudio.src = URL.createObjectURL(audioBlob);
+
+      microphoneStream.getTracks().forEach(function(track) {
+        track.stop();
+      });
+
+      microphoneStream = null;
+      recordArea.classList.remove('recording');
+    };
+
+    recorder.start();
+    recordArea.classList.add('recording');
+
+  } catch (error) {
+    alert('Microphone access was not allowed.');
   }
 });
 
-// HONK
-honkBtn.addEventListener('click', function() {
-  playSound();
-  honkSound.currentTime = 0;
-  honkSound.play();
-  carMessage.textContent = 'BEEP BEEP!';
+// Play button
+playArea.addEventListener('click', function() {
+  if (recordedAudio.src) {
+    recordedAudio.play().catch(function() {});
+  }
 });
 
-// STOP MUSIC WHEN CLICKING NEXT
+// Pause button
+pauseArea.addEventListener('click', function() {
+  recordedAudio.pause();
+});
+
+// Stop sounds when leaving Page 3
 nextBtn2.addEventListener('click', function() {
-  radioSound.pause();
-  radioSound.currentTime = 0;
-  radioBtn.textContent = 'PLAY RADIO';
-  radioBtn.classList.remove('playing');
-});
+  recordedAudio.pause();
 
-// RESET PAGE 3 WHEN RESTARTING
-restartBtn.addEventListener('click', function() {
-  radioSound.pause();
-  radioSound.currentTime = 0;
-  radioBtn.textContent = 'PLAY RADIO';
-  radioBtn.classList.remove('playing');
-  carMessage.textContent = 'Click to interact with the car';
+  if (recorder && recorder.state === 'recording') {
+    recorder.stop();
+  }
+
+  hornSound.pause();
+  hornSound.currentTime = 0;
+
+  engineSound.pause();
+  engineSound.currentTime = 0;
 });
 
 
