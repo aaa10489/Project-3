@@ -75,4 +75,7 @@ document.addEventListener('click', function() {
   photos.forEach(function(photo) {
     photo.classList.remove('enlarged');
   });
+  const deerSound = document.getElementById('deer-sound');
+deerSound.pause();
+deerSound.currentTime = 0;
 });
