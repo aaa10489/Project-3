@@ -15,14 +15,13 @@ body, html {
   background-repeat: no-repeat;
 }
 
-/*container=positioning canvas screen*/
 .container {
   position: relative;
   width: 100vw;
   height: 100vh;
-}
+}}
 
-/*Title*/
+/*title*/
 h1 {
   position: absolute;
   top: 22%;
@@ -62,38 +61,35 @@ h1 {
   box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.6);
 }
 
-
-
-
+/*page 2*/
 #page2 {
   width: 100vw;
   height: 100vh;
   background: black;
-  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.page2-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
 }
 
 #car-image {
-  position: absolute;
-  width: auto;
-  height: auto;
-  max-width: 100%;
-  max-height: 95%;
-  object-fit: contain;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  border: 1px solid white;
+  width: 800px;
+  height: 450px;
+  object-fit: cover;
+  border: 2px solid white;
 }
 
-
 #next-btn {
-  position: absolute;
-  bottom: 20px;
-  right: 30px;
-  background: #f7e2bd;
+background: #f7e2bd;
   color: black;
   border: none;
-  padding: 8px 32px;
+  padding: 8px 36px;
   font-family: 'Gaegu', cursive;
   font-size: 1.8rem;
   cursor: pointer;
@@ -152,7 +148,6 @@ h1 {
   transform: scale(1.08);
   box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.6);
 }
-
 
 /* Page 4 */
 #page4 {
@@ -225,7 +220,6 @@ h1 {
   grid-column: 2;
   grid-row: 3;
 }
-
 
 /* page 4 "next" button */
 #next-btn3 {
