@@ -408,3 +408,19 @@ h1 {
   right: 30px;
   z-index: 10;
 }
+
+.hotspot img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.hotspot:hover {
+  background: transparent;
+  box-shadow: none;
+}
+
+.hotspot img:hover {
+  transform: scale(1.15);
+}
