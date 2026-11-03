@@ -1,7 +1,7 @@
 const clickSound = document.getElementById('click-sound');
 
 function playSound() {
-  clickSound.currentTime = 0.5;
+  clickSound.currentTime = 0.3;
   clickSound.play().catch(error => {});
 }
 
