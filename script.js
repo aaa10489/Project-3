@@ -61,6 +61,12 @@ photos.forEach(function(photo) {
 
     // Enlarge the selected photo
     photo.classList.add('enlarged');
+
+if (photo.alt === 'Deer') {
+  const deerSound = document.getElementById('deer-sound');
+  deerSound.currentTime = 0;
+  deerSound.play();
+}
   });
 });
 
