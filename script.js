@@ -46,11 +46,27 @@ restartBtn.addEventListener('click', function() {
 });
 
 
-// page 4 photo interactions
+
 const photos = document.querySelectorAll('.photo-grid img');
+// page 4 photo interactions
 
 photos.forEach(function(photo) {
-  photo.addEventListener('click', function() {
-    photo.classList.toggle('enlarged');
+  photo.addEventListener('click', function(event) {
+    event.stopPropagation();
+
+    // Close any previously enlarged photo
+    photos.forEach(function(p) {
+      p.classList.remove('enlarged');
+    });
+
+    // Enlarge the selected photo
+    photo.classList.add('enlarged');
+  });
+});
+
+// Click anywhere else to close the enlarged photo
+document.addEventListener('click', function() {
+  photos.forEach(function(photo) {
+    photo.classList.remove('enlarged');
   });
 });
