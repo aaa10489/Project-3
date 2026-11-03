@@ -73,6 +73,8 @@ photos.forEach(function(photo) {
     const stuckSound = document.getElementById('stuck-sound');
     stuckSound.currentTime = 0;
     stuckSound.play();
+
+
   }
 
       });
@@ -86,4 +88,11 @@ document.addEventListener('click', function() {
   const deerSound = document.getElementById('deer-sound');
 deerSound.pause();
 deerSound.currentTime = 0;
+
+const stuckSound = document.getElementById('stuck-sound');
+  stuckSound.pause();
+  stuckSound.currentTime = 0;
+
 });
+
+
