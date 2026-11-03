@@ -31,3 +31,19 @@ nextBtn2.addEventListener('click', function() {
   document.getElementById('page3').style.display = 'none';
   document.getElementById('page4').style.display = 'flex';
 });
+
+//Page 4 Next Button
+const nextBtn3 = document.getElementById('next-btn3');
+nextBtn3.addEventListener('click', function() {
+  playSound();
+  document.getElementById('page4').style.display = 'none';
+  document.getElementById('page5').style.display = 'flex';
+});
+
+//Page 5 Restart Button
+const restartBtn = document.getElementById('restart-btn');
+restartBtn.addEventListener('click', function() {
+  playSound();
+  document.getElementById('page5').style.display = 'none';
+  document.querySelector('.container').style.display = 'block';
+});
