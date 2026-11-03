@@ -1,5 +1,5 @@
-const startBtn = document.getElementById('start-button');
+const start-button = document.getElementById('start-button');
 
-startBtn.addEventListener('click', function() {
+start-button.addEventListener('click', function() {
   console.log('Start button clicked!');
 });
