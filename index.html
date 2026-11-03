@@ -21,20 +21,25 @@
     </div>
   </div>
 
-  <div id="page3" style="display: none;">
-    
-    <img src="assets/interact.jpg" id="car-image2">
 
-  <div class="car-controls">
-    <button id="engine-btn">START ENGINE</button>
-    <button id="radio-btn">PLAY RADIO</button>
-    <button id="honk-btn">HONK</button>
+<div id="page3" style="display: none;">
+
+  <div class="dashboard">
+    <img src="assets/interact.jpg" id="car-image2" alt="Car dashboard">
+
+    <!-- Clickable areas already shown in the image -->
+    <button id="horn-area" class="hotspot" aria-label="Honk horn"></button>
+    <button id="engine-area" class="hotspot" aria-label="Start engine"></button>
+
+    <button id="record-area" class="hotspot" aria-label="Record audio"></button>
+    <button id="play-area" class="hotspot" aria-label="Play audio"></button>
+    <button id="pause-area" class="hotspot" aria-label="Pause audio"></button>
   </div>
 
-  <p id="car-message">Click to interact with the car</p>
-    
-    <button id="next-btn2">NEXT</button>
-  </div>
+  <button id="next-btn2">NEXT</button>
+
+</div>
+
 
   <div id="page4" style="display: none;">
     <div class="photo-grid">
@@ -58,7 +63,6 @@
   
   <audio id="click-sound" src="assets/click.mp3" preload="auto"></audio>
   <audio id="engine-sound" src="assets/engine.mp3"></audio>
-  <audio id="radio-sound" src="assets/music.mp3" loop></audio>
   <audio id="honk-sound" src="assets/honk.mp3"></audio>
 
   <script src="script.js"></script>
