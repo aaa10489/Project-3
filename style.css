@@ -15,8 +15,8 @@ body, html {
   background-repeat: no-repeat;
 }
 
-/*page1=positioning canvas screen*/
-.page1 {
+/*container=positioning canvas screen*/
+.container {
   position: relative;
   width: 100vw;
   height: 100vh;
