@@ -96,3 +96,67 @@ const stuckSound = document.getElementById('stuck-sound');
 });
 
 
+// PAGE 3 INTERACTIVE CAR
+
+const engineBtn = document.getElementById('engine-btn');
+const radioBtn = document.getElementById('radio-btn');
+const honkBtn = document.getElementById('honk-btn');
+
+const engineSound = document.getElementById('engine-sound');
+const radioSound = document.getElementById('radio-sound');
+const honkSound = document.getElementById('honk-sound');
+
+const carMessage = document.getElementById('car-message');
+
+// START ENGINE
+engineBtn.addEventListener('click', function() {
+  playSound();
+  engineSound.currentTime = 0;
+  engineSound.play();
+  carMessage.textContent = 'Engine started...';
+});
+
+// PLAY OR STOP RADIO
+radioBtn.addEventListener('click', function() {
+  playSound();
+
+  if (radioSound.paused) {
+    radioSound.play();
+    radioBtn.textContent = 'STOP RADIO';
+    radioBtn.classList.add('playing');
+    carMessage.textContent = 'Radio connected...';
+  } else {
+    radioSound.pause();
+    radioSound.currentTime = 0;
+    radioBtn.textContent = 'PLAY RADIO';
+    radioBtn.classList.remove('playing');
+    carMessage.textContent = 'Radio disconnected...';
+  }
+});
+
+// HONK
+honkBtn.addEventListener('click', function() {
+  playSound();
+  honkSound.currentTime = 0;
+  honkSound.play();
+  carMessage.textContent = 'BEEP BEEP!';
+});
+
+// STOP MUSIC WHEN CLICKING NEXT
+nextBtn2.addEventListener('click', function() {
+  radioSound.pause();
+  radioSound.currentTime = 0;
+  radioBtn.textContent = 'PLAY RADIO';
+  radioBtn.classList.remove('playing');
+});
+
+// RESET PAGE 3 WHEN RESTARTING
+restartBtn.addEventListener('click', function() {
+  radioSound.pause();
+  radioSound.currentTime = 0;
+  radioBtn.textContent = 'PLAY RADIO';
+  radioBtn.classList.remove('playing');
+  carMessage.textContent = 'Click to interact with the car';
+});
+
+
