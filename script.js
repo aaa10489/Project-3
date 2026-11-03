@@ -68,6 +68,14 @@ photos.forEach(function(photo) {
       deerSound.currentTime = 0;
       deerSound.play();
     }
+
+     // Broken radio sound (top-left photo)
+    if (photo.alt === 'Car radio') {
+      const radioSound = document.getElementById('radio-sound');
+      radioSound.currentTime = 0;
+      radioSound.play();
+    } 
+    
     //car stuck sound
     if (photo.alt === 'Car stuck in sand') {
     const stuckSound = document.getElementById('stuck-sound');
