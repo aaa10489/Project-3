@@ -15,44 +15,49 @@ body, html {
   background-repeat: no-repeat;
 }
 
+/*container=positioning canvas screen*/
 .container {
-  position: absolute;
-  top: 0;
-  left: 0;
+  position: relative;
   width: 100vw;
   height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
 }
 
+/*Title*/
 h1 {
+  position: absolute;
+  top: 22%;
+  left: 50%;
+  transform: translateX(-50%);
   color: #fff4df;
-  font-size: 5.5rem;
+  font-size: 7rem;
   font-weight: 700;
-  margin-bottom: 25px;
   letter-spacing: 2px;
-  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+  white-space: nowrap;
 }
 
-#start-button {
+/*Start Button*/
+#start-btn {
+  position: absolute;
+  top: 42%;
+  left: 50%;
+  transform: translateX(-50%);
   font-family: 'Gaegu', cursive, sans-serif;
   background-color: #f7e2bd;
   color: #111111;
   border: none;
-  padding: 10px 45px;
-  font-size: 2.5rem;
+  padding: 8px 32px;
+  font-size: 1.8rem;
   font-weight: 700;
-  border-radius: 6px;
+  border-radius: 5px;
   cursor: pointer;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4);
   transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
 }
 
-#start-button:hover {
+/*Hover effect*/
+#start-btn:hover {
   background-color: #ffe8c2;
-  transform: scale(1.08);
+  transform: translateX(-50%) scale(1.08);
   box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.6);
 }
