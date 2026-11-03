@@ -22,7 +22,17 @@
   </div>
 
   <div id="page3" style="display: none;">
+    
     <img src="assets/interact.jpg" id="car-image2">
+
+  <div class="car-controls">
+    <button id="engine-btn">START ENGINE</button>
+    <button id="radio-btn">PLAY RADIO</button>
+    <button id="honk-btn">HONK</button>
+  </div>
+
+  <p id="car-message">Click to interact with the car</p>
+    
     <button id="next-btn2">NEXT</button>
   </div>
 
@@ -46,6 +56,9 @@
   </div>
   
   <audio id="click-sound" src="assets/click.mp3" preload="auto"></audio>
+  <audio id="engine-sound" src="assets/engine.mp3"></audio>
+  <audio id="radio-sound" src="assets/music.mp3" loop></audio>
+  <audio id="honk-sound" src="assets/honk.mp3"></audio>
 
   <script src="script.js"></script>
 </body>
