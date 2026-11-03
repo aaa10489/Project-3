@@ -61,3 +61,38 @@ h1 {
   transform: translateX(-50%) scale(1.08);
   box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.6);
 }
+
+
+
+
+#page2 {
+  width: 100vw;
+  height: 100vh;
+  background: black;
+  position: relative;
+}
+
+#car-image {
+  position: absolute;
+  width: 90%;
+  height: 85%;
+  object-fit: contain;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+#next-btn {
+  position: absolute;
+  bottom: 20px;
+  right: 30px;
+  background: #f7e2bd;
+  color: black;
+  border: none;
+  padding: 8px 32px;
+  font-family: 'Gaegu', cursive;
+  font-size: 1.8rem;
+  cursor: pointer;
+  border-radius: 5px;
+}
