@@ -2,13 +2,13 @@ const startBtn = document.getElementById('start-btn');
 const clickSound = document.getElementById('click-sound');
 
 startBtn.addEventListener('mouseenter', function() {
-  clickSound.currentTime = 0.2; 
+  clickSound.currentTime = 0.5; 
   clickSound.play().catch(error => {
   });
 });
 
 startBtn.addEventListener('click', function() {
-  clickSound.currentTime = 0.2;
+  clickSound.currentTime = 0.5;
   clickSound.play();
   
   document.querySelector('.container').style.display = 'none';
