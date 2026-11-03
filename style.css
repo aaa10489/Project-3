@@ -295,3 +295,6 @@ h1 {
   z-index: 10;
   position: relative;
 }
+.photo-grid img:hover:not(.enlarged) {
+  filter: brightness(1.2);
+}
