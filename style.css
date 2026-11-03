@@ -37,7 +37,7 @@ h1 {
   text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
 }
 
-#start-btn {
+#start-button {
   font-family: 'Gaegu', cursive, sans-serif;
   background-color: #f7e2bd;
   color: #111111;
@@ -51,7 +51,7 @@ h1 {
   transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
 }
 
-#start-btn:hover {
+#start-button:hover {
   background-color: #ffe8c2;
   transform: scale(1.08);
   box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.6);
