@@ -77,6 +77,13 @@ photos.forEach(function(photo) {
     } 
 
     
+    // Car exterior engine sound
+    if (photo.alt === 'Car in desert') {
+      const exteriorEngineSound = document.getElementById('exterior-engine-sound');
+      exteriorEngineSound.currentTime = 0;
+      exteriorEngineSound.play();
+    }
+
     
     //car stuck sound
     if (photo.alt === 'Car stuck in sand') {
@@ -105,6 +112,11 @@ deerSound.currentTime = 0;
 const stuckSound = document.getElementById('stuck-sound');
   stuckSound.pause();
   stuckSound.currentTime = 0;
+
+    // Stop car exterior engine sound
+  const exteriorEngineSound = document.getElementById('exterior-engine-sound');
+  exteriorEngineSound.pause();
+  exteriorEngineSound.currentTime = 0;
 
 
   // Stop broken radio sound 
