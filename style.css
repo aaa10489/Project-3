@@ -9,7 +9,7 @@ body, html {
   height: 100%;
   overflow: hidden;
   font-family: 'Gaegu', cursive, sans-serif;
-  background-image: url('assets/opening.JPG');
+  background-image: url('assets/opening.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
