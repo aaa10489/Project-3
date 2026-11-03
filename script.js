@@ -1,16 +1,12 @@
 const clickSound = document.getElementById('click-sound');
 
-//start sound effect
 function playSound() {
-  clickSound.currentTime = 0;
+  clickSound.currentTime = 0.5;
   clickSound.play().catch(error => {});
 }
 
-//Start Button
+//Start Button sound when clicked
 const startBtn = document.getElementById('start-btn');
-startBtn.addEventListener('mouseenter', function() {
-  playSound();
-});
 startBtn.addEventListener('click', function() {
   playSound();
   document.querySelector('.container').style.display = 'none';
@@ -28,6 +24,7 @@ nextBtn.addEventListener('click', function() {
 //Page 3 Next Button
 const nextBtn2 = document.getElementById('next-btn2');
 nextBtn2.addEventListener('click', function() {
+  playSound();
   document.getElementById('page3').style.display = 'none';
   document.getElementById('page4').style.display = 'flex';
 });
