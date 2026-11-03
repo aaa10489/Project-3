@@ -283,3 +283,15 @@ h1 {
   transform: scale(1.08);
   box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.6);
 }
+
+/* page 4 photo interactions */
+.photo-grid img {
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.photo-grid img.enlarged {
+  transform: scale(1.08);
+  z-index: 10;
+  position: relative;
+}
