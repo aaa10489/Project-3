@@ -128,3 +128,27 @@ h1 {
   transform: translate(-50%, -50%);
   border: 1px solid white;
 }
+
+
+#next-btn2 {
+  position: absolute;
+  bottom: 20px;
+  right: 30px;
+  background: #f7e2bd;
+  color: black;
+  border: none;
+  padding: 8px 32px;
+  font-family: 'Gaegu', cursive;
+  font-size: 1.8rem;
+  font-weight: 700;
+  cursor: pointer;
+  border-radius: 5px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4);
+  transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+#next-btn2:hover {
+  background-color: #ffe8c2;
+  transform: scale(1.08);
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.6);
+}
