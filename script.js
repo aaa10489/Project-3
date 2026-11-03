@@ -75,6 +75,8 @@ photos.forEach(function(photo) {
       radioSound.currentTime = 0;
       radioSound.play();
     } 
+
+    
     
     //car stuck sound
     if (photo.alt === 'Car stuck in sand') {
@@ -93,13 +95,22 @@ document.addEventListener('click', function() {
   photos.forEach(function(photo) {
     photo.classList.remove('enlarged');
   });
+
+  //stop deer sound
   const deerSound = document.getElementById('deer-sound');
 deerSound.pause();
 deerSound.currentTime = 0;
 
+// Stop stuck car  sound 
 const stuckSound = document.getElementById('stuck-sound');
   stuckSound.pause();
   stuckSound.currentTime = 0;
+
+
+  // Stop broken radio sound 
+  const brokenRadioSound = document.getElementById('radio-sound');
+  brokenRadioSound.pause();
+  brokenRadioSound.currentTime = 0;
 
 });
 
