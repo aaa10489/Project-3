@@ -99,3 +99,24 @@ h1 {
   cursor: pointer;
   border-radius: 5px;
 }
+
+
+#page3 {
+  width: 100vw;
+  height: 100vh;
+  background: black;
+  position: relative;
+}
+
+#car-image2 {
+  position: absolute;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 95%;
+  object-fit: contain;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px solid white;
+}
