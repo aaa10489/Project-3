@@ -1,33 +1,31 @@
 const clickSound = document.getElementById('click-sound');
 
-//start button
+//start sound effect
+function playSound() {
+  clickSound.currentTime = 0;
+  clickSound.play().catch(error => {});
+}
+
+//Start Button
 const startBtn = document.getElementById('start-btn');
 startBtn.addEventListener('mouseenter', function() {
-  clickSound.currentTime = 0.10; 
-  clickSound.play().catch(error => {
-  });
+  playSound();
 });
 startBtn.addEventListener('click', function() {
-  clickSound.currentTime = 0.10;
-  clickSound.play();
+  playSound();
   document.querySelector('.container').style.display = 'none';
   document.getElementById('page2').style.display = 'flex';
 });
 
-//page 2
+//Page 2 Next Button
 const nextBtn = document.getElementById('next-btn');
-nextBtn.addEventListener('mouseenter', function() {
-  clickSound.currentTime = 0.1;
-  clickSound.play().catch(() => {});
-});
 nextBtn.addEventListener('click', function() {
-  clickSound.currentTime = 0.1;
-  clickSound.play();
+  playSound();
   document.getElementById('page2').style.display = 'none';
   document.getElementById('page3').style.display = 'block';
 });
 
-//page 3
+//Page 3 Next Button
 const nextBtn2 = document.getElementById('next-btn2');
 nextBtn2.addEventListener('click', function() {
   document.getElementById('page3').style.display = 'none';
