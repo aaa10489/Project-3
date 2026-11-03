@@ -74,12 +74,15 @@ h1 {
 
 #car-image {
   position: absolute;
-  width: 90%;
-  height: 85%;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 95%;
   object-fit: contain;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  border: 1px solid white;
 }
 
 
