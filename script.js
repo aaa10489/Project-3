@@ -47,3 +47,13 @@ restartBtn.addEventListener('click', function() {
   document.getElementById('page5').style.display = 'none';
   document.querySelector('.container').style.display = 'block';
 });
+
+
+// page 4 photo interactions
+const photos = document.querySelectorAll('.photo-grid img');
+
+photos.forEach(function(photo) {
+  photo.addEventListener('click', function() {
+    photo.classList.toggle('enlarged');
+  });
+});
