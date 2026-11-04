@@ -286,3 +286,18 @@ document.getElementById('new-page4-next').addEventListener('click', function() {
   page4Audio.pause();
   page4Audio.currentTime = 0;
 });
+
+// Last page click to hear the story
+const hearBtn5 = document.getElementById('hear-btn5');
+const page5Audio = document.getElementById('page5-audio');
+
+hearBtn5.addEventListener('click', function() {
+  page5Audio.currentTime = 0;
+  page5Audio.play();
+});
+
+// Stop the recording when restarting
+document.getElementById('restart-btn').addEventListener('click', function() {
+  page5Audio.pause();
+  page5Audio.currentTime = 0;
+});

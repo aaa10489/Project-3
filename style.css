@@ -528,3 +528,34 @@ h1 {
   color: #d9b98f;
   transform: scale(1.05);
 }
+
+/* last page click to hear button */
+
+#page5 {
+  position: relative;
+}
+
+#hear-btn5 {
+  position: absolute;
+  top: 25px;
+  left: 25px;
+
+  background: transparent;
+  color: white;
+  border: none;
+
+  font-family: 'Gaegu', cursive;
+  font-size: 26px;
+  font-weight: bold;
+
+  padding: 0;
+  cursor: pointer;
+  z-index: 10;
+
+  transition: all 0.2s ease;
+}
+
+#hear-btn5:hover {
+  color: #d9b98f;
+  transform: scale(1.05);
+}
