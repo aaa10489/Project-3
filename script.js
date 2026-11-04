@@ -170,29 +170,24 @@ engineArea.addEventListener('click', function() {
   engineSound.play().catch(function() {});
 });
 
- // PAGE 3 RADIO SOUND
-const page3Radio = document.getElementById('page3-radio');
 
-// Play radio when clicking the play image
-playArea.addEventListener('click', function() {
-  page3Radio.play();
+ // PAGE 3 RADIO SOUND
+
+const page3Radio = new Audio('assets/radio-music.mp3');
+
+document.getElementById('play-area').addEventListener('click', function() {
+  page3Radio.play().catch(function(error) {
+    console.error('Radio error:', error);
+  });
 });
 
-// Pause radio when clicking the pause image
-pauseArea.addEventListener('click', function() {
+document.getElementById('pause-area').addEventListener('click', function() {
   page3Radio.pause();
 });
 
-// Stop radio when leaving Page 3
-nextBtn2.addEventListener('click', function() {
+document.getElementById('next-btn2').addEventListener('click', function() {
   page3Radio.pause();
   page3Radio.currentTime = 0;
-
-  hornSound.pause();
-  hornSound.currentTime = 0;
-
-  engineSound.pause();
-  engineSound.currentTime = 0;
 });
 
 // Page 2 click to hear the story
