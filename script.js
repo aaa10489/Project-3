@@ -23,9 +23,19 @@ nextBtn.addEventListener('click', function() {
 
 //Page 3 Next Button
 const nextBtn2 = document.getElementById('next-btn2');
+
 nextBtn2.addEventListener('click', function() {
   playSound();
   document.getElementById('page3').style.display = 'none';
+  document.getElementById('new-page4').style.display = 'flex';
+});
+
+// New Page 4 Next Button
+const newPage4Next = document.getElementById('new-page4-next');
+
+newPage4Next.addEventListener('click', function() {
+  playSound();
+  document.getElementById('new-page4').style.display = 'none';
   document.getElementById('page4').style.display = 'flex';
 });
 
