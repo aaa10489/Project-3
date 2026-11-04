@@ -170,85 +170,23 @@ engineArea.addEventListener('click', function() {
   engineSound.play().catch(function() {});
 });
 
-// RADIO - record, play and pause
-let recorder;
-let recordedChunks = [];
-let recordedAudio = new Audio();
-let microphoneStream = null;
+ // PAGE 3 RADIO SOUND
+const page3Radio = document.getElementById('page3-radio');
 
-// Record button
-recordArea.addEventListener('click', async function() {
-
-  // Click again to stop recording
-  if (recorder && recorder.state === 'recording') {
-    recorder.stop();
-    return;
-  }
-
-  if (!navigator.mediaDevices || !window.MediaRecorder) {
-    alert('Microphone recording requires localhost or HTTPS.');
-    return;
-  }
-
-  try {
-    microphoneStream =
-      await navigator.mediaDevices.getUserMedia({ audio: true });
-
-    recordedChunks = [];
-    recorder = new MediaRecorder(microphoneStream);
-
-    recorder.ondataavailable = function(event) {
-      if (event.data.size > 0) {
-        recordedChunks.push(event.data);
-      }
-    };
-
-    recorder.onstop = function() {
-      const audioBlob = new Blob(recordedChunks, {
-        type: recorder.mimeType
-      });
-
-      if (recordedAudio.src.startsWith('blob:')) {
-        URL.revokeObjectURL(recordedAudio.src);
-      }
-
-      recordedAudio.src = URL.createObjectURL(audioBlob);
-
-      microphoneStream.getTracks().forEach(function(track) {
-        track.stop();
-      });
-
-      microphoneStream = null;
-      recordArea.classList.remove('recording');
-    };
-
-    recorder.start();
-    recordArea.classList.add('recording');
-
-  } catch (error) {
-    alert('Microphone access was not allowed.');
-  }
-});
-
-// Play button
+// Play radio when clicking the play image
 playArea.addEventListener('click', function() {
-  if (recordedAudio.src) {
-    recordedAudio.play().catch(function() {});
-  }
+  page3Radio.play();
 });
 
-// Pause button
+// Pause radio when clicking the pause image
 pauseArea.addEventListener('click', function() {
-  recordedAudio.pause();
+  page3Radio.pause();
 });
 
-// Stop sounds when leaving Page 3
+// Stop radio when leaving Page 3
 nextBtn2.addEventListener('click', function() {
-  recordedAudio.pause();
-
-  if (recorder && recorder.state === 'recording') {
-    recorder.stop();
-  }
+  page3Radio.pause();
+  page3Radio.currentTime = 0;
 
   hornSound.pause();
   hornSound.currentTime = 0;
