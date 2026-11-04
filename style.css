@@ -464,3 +464,48 @@ h1 {
   background-color: #f5e2c8;
   transform: scale(1.05);
 }
+
+/* NEW PAGE 4 */
+
+#new-page4 {
+  width: 100vw;
+  height: 100vh;
+  background: black;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+}
+
+#new-page4-image {
+  width: 90%;
+  height: 90%;
+  object-fit: contain;
+  border: none;
+}
+
+/* New Page 4 next button */
+#new-page4-next {
+  position: absolute;
+  bottom: 20px;
+  right: 30px;
+
+  background: #f7e2bd;
+  color: black;
+  border: none;
+  padding: 8px 32px;
+
+  font-family: 'Gaegu', cursive;
+  font-size: 1.8rem;
+  font-weight: 700;
+  cursor: pointer;
+  border-radius: 5px;
+
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4);
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+/* next button hover */
+#new-page4-next:hover {
+  background-color: #ffe8c2;
+  transform: scale(1.08);
+}
