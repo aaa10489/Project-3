@@ -247,4 +247,18 @@ nextBtn2.addEventListener('click', function() {
   engineSound.currentTime = 0;
 });
 
+// Page 2 click to hear the story
+const hearBtn = document.getElementById('hear-btn');
+const page2Audio = document.getElementById('page2-audio');
+
+hearBtn.addEventListener('click', function() {
+  page2Audio.currentTime = 0;
+  page2Audio.play();
+});
+
+// Stop Page 2 audio when clicking next
+document.getElementById('next-btn').addEventListener('click', function() {
+  page2Audio.pause();
+  page2Audio.currentTime = 0;
+});
 
