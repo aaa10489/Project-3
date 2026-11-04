@@ -459,14 +459,7 @@ h1 {
   transform: scale(1.05);
 }
 
-/* Hover effect */
-#hear-btn:hover {
-  background-color: #f5e2c8;
-  transform: scale(1.05);
-}
-
 /* NEW PAGE 4 */
-
 #new-page4 {
   width: 100vw;
   height: 100vh;
@@ -508,4 +501,30 @@ h1 {
 #new-page4-next:hover {
   background-color: #ffe8c2;
   transform: scale(1.08);
+}
+
+/* new page 4 story button*/
+#hear-btn4 {
+  position: absolute;
+  top: 25px;
+  left: 25px;
+
+  background: transparent;
+  color: white;
+  border: none;
+
+  font-family: 'Gaegu', cursive;
+  font-size: 26px;
+  font-weight: bold;
+
+  padding: 0;
+  cursor: pointer;
+  z-index: 10;
+
+  transition: all 0.2s ease;
+}
+
+#hear-btn4:hover {
+  color: #d9b98f;
+  transform: scale(1.05);
 }
