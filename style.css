@@ -425,3 +425,42 @@ h1 {
 .hotspot img:hover {
   transform: scale(1.15);
 }
+
+/* Page 2 click to hear buton */
+
+#page2 {
+  position: relative;
+}
+
+
+  
+#hear-btn {
+  position: absolute;
+  top: 25px;
+  left: 25px;
+
+  background: transparent;
+  color: #ffffff;
+  border: none;
+
+  font-family: 'Gaegu', cursive;
+  font-size: 26px;
+  font-weight: bold;
+
+  padding: 0;
+  cursor: pointer;
+  z-index: 10;
+
+  transition: all 0.2s ease;
+}
+
+#hear-btn:hover {
+  color: #d9b98f;
+  transform: scale(1.05);
+}
+
+/* Hover effect */
+#hear-btn:hover {
+  background-color: #f5e2c8;
+  transform: scale(1.05);
+}
